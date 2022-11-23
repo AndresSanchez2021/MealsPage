@@ -40,7 +40,7 @@ export const CardMeal = ({
   
   return (
       
-        <Link className='no-nav-link' key={idMeal} to={`/Receta/${idMeal}`}
+        <Link className='no-nav-link' key={idMeal} id={idMeal}to={`/Receta/${idMeal}`}
         >
           <RenderCardMeal/>
         </Link>
