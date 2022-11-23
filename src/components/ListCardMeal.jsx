@@ -3,7 +3,7 @@ import { CardMeal } from './CardMeal'
 import { LoadingComponent } from './LoadingComponent';
 
 export const ListCardMeal = ({data=[]}) => {
-console.log('data :', data);
+
     
 
     const RenderListMeal=()=>data.map(item => 

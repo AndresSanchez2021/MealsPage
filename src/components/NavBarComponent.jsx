@@ -12,7 +12,7 @@ export const NavBarComponent = ({photo=""}) => {
     
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">Kuks Fresh</a>
+                <span className="navbar-brand" href="#">Kuks Fresh</span>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
@@ -20,17 +20,17 @@ export const NavBarComponent = ({photo=""}) => {
                     <ul className="navbar-nav ">
                         <Link to="/home" >
                             <li className="nav-item .effectTransition">
-                                <a className="nav-link active" aria-current="page" href="#">Home</a>
+                                <span className="nav-link active" aria-current="page" href="#">Home</span>
                             </li>
                         </Link>  
                         <Link to="/" >
                             <li className="nav-item .effectTransition">
-                                <a className="nav-link" href="#">Nosotros</a>
+                                <span className="nav-link" href="#">Nosotros</span>
                             </li>
                         </Link>  
                         <Link to="/" >
                             <li className="nav-item .effectTransition">
-                            <a className="nav-link" href="#">Videos</a>
+                            <span className="nav-link" href="#">Videos</span>
                             </li>                    
                         </Link>
                     </ul>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link} from "react-router-dom";
-  
+
 
 export const CardMeal = ({
     idMeal, 
@@ -20,18 +20,18 @@ export const CardMeal = ({
 
     const RenderCardMeal=()=>(
       <li className='card col-5 col-lg-3 cardMeal no-nav-link'  id={idMeal} key={idMeal}>
-        <img class="card-img-top" src={strMealThumb} alt="Card image cap"/>
+        <img className="card-img-top" src={strMealThumb} alt="Card image cap"/>
         <div className='card-body no-nav-link'>
-          <h6 class="card-title  colorPrincipal">{strMeal}</h6>
-          <p class="card-text text">{strInstructions}</p>
+          <h6 className="card-title  colorPrincipal">{strMeal}</h6>
+          <p className="card-text text">{strInstructions}</p>
 
-          <span class="card-text text">{}</span>
-          <span class="card-text text">{}</span>
+          <span className="card-text text">{}</span>
+          <span className="card-text text">{}</span>
 
-          <p class="card-text text-short">{strIngredient1}</p>
-          <p class="card-text text-short">{strIngredient2}</p>
-          <p class="card-text text-short">{strIngredient3}</p>
-          <p class="card-text text-short">{strIngredient4}</p> 
+          <p className="card-text text-short">{strIngredient1}</p>
+          <p className="card-text text-short">{strIngredient2}</p>
+          <p className="card-text text-short">{strIngredient3}</p>
+          <p className="card-text text-short">{strIngredient4}</p> 
 
           
         </div>
@@ -40,7 +40,7 @@ export const CardMeal = ({
   
   return (
       
-        <Link className='no-nav-link'to={`/Receta/${idMeal}`}
+        <Link className='no-nav-link' key={idMeal} to={`/Receta/${idMeal}`}
         >
           <RenderCardMeal/>
         </Link>
