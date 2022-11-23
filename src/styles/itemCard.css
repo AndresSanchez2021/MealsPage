@@ -1,0 +1,14 @@
+.cardItem{
+    border:0 !important;
+    margin: 5px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    min-width: 100px!important;
+}
+.cardItem:hover{
+    background-color: var(--card-color-background);
+    
+}
+.description{
+    font-size: 12px;
+    font-weight: 200;
+}
