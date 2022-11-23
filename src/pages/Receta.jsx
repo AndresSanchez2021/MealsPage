@@ -36,8 +36,9 @@ export const Receta = (  ) => {
     console.log('details.meals :', details.meals[0]);
      
     return (
-      <div className="row">
-        <div className='col-lg-12 col-sm-4 col-12 flexCategories'>
+      <div className="">
+      <div className="row justify-content-center">
+        <div className='col-lg-12 col-sm-12 col-12 text-center'>
         <img className="img-fluid text-center" src={details.meals[0].strMealThumb} alt="Card image cap"/>
           <div className='card-body'>
             <h6 className="card-title  colorPrincipal">{details.meals[0].strMeal}</h6>
@@ -55,6 +56,7 @@ export const Receta = (  ) => {
           </div>
         </div>
         
+      </div>
       </div>
     ) 
 }
