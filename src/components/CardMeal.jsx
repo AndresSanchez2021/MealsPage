@@ -3,16 +3,16 @@ import { Link} from "react-router-dom";
 
 
 export const CardMeal = ({
-    idMeal, 
-    strMeal, 
-    strCategory,
-    strArea,
-    strIngredient1,
-    strIngredient2,
-    strIngredient3,
-    strIngredient4,
-    strInstructions,
-    strMealThumb
+    idMeal="", 
+    strMeal="", 
+    strCategory="",
+    strArea="",
+    strIngredient1="",
+    strIngredient2="",
+    strIngredient3="",
+    strIngredient4="",
+    strInstructions="",
+    strMealThumb=""
     }) => {
       strInstructions.split("");
       strInstructions = strInstructions.length >=100 ? strInstructions.slice(0,100):strInstructions;
@@ -40,7 +40,7 @@ export const CardMeal = ({
   
   return (
       
-        <Link className='no-nav-link' key={idMeal} id={idMeal}to={`/Receta/${idMeal}`}
+        <Link className='no-nav-link' key={idMeal} id={idMeal} to={`/Receta/${idMeal}`}
         >
           <RenderCardMeal/>
         </Link>

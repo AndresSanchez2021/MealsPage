@@ -10,25 +10,25 @@ export const NavBarComponent = ({photo=""}) => {
 
   return (
     
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg bg-light sticky-top">
             <div className="container-fluid">
-                <span className="navbar-brand" href="#">Kuks Fresh</span>
+                <Link className="navbar-brand no-nav-link" to="/home">Kuks Fresh</Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse flex-navbar" id="navbarNav">
                     <ul className="navbar-nav ">
-                        <Link to="/home" >
+                        <Link className='no-nav-link'  to="/home" >
                             <li className="nav-item .effectTransition">
                                 <span className="nav-link active" aria-current="page" href="#">Home</span>
                             </li>
                         </Link>  
-                        <Link to="/" >
+                        <Link className='no-nav-link' to="/" >
                             <li className="nav-item .effectTransition">
                                 <span className="nav-link" href="#">Nosotros</span>
                             </li>
                         </Link>  
-                        <Link to="/" >
+                        <Link className='no-nav-link'  to="/" >
                             <li className="nav-item .effectTransition">
                             <span className="nav-link" href="#">Videos</span>
                             </li>                    

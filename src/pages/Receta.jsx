@@ -22,41 +22,44 @@ export const Receta = (  ) => {
       })        
     }
 
+
     useEffect(() => {
       loadData()
 
     }, [])
 
-    if(details===null)
-      return (
-        <LoadingComponent/>
-      )
-      
-    
-    console.log('details.meals :', details.meals[0]);
-     
-    return (
-      <div className="">
-      <div className="row justify-content-center">
-        <div className='col-lg-12 col-sm-12 col-12 text-center'>
-        <img className="img-fluid text-center" src={details.meals[0].strMealThumb} alt="Card image cap"/>
-          <div className='card-body'>
-            <h6 className="card-title  colorPrincipal">{details.meals[0].strMeal}</h6>
-            <p className="card-text text text-wrap">{details.meals[0].strInstructions}</p>
 
-            <span className="card-text text">{}</span>
-            <span className="card-text text">{}</span>
-
-            <p className="card-text text-short">{details.meals[0].strIngredient1}</p>
-            <p className="card-text text-short">{details.meals[0].strIngredient2}</p>
-            <p className="card-text text-short">{details.meals[0].strIngredient3}</p>
-            <p className="card-text text-short">{details.meals[0].strIngredient4}</p> 
-
+    const RenderReceta=()=>(
+        <div className='col-lg-9 col-sm-8 col-12 text-center'>
+          
+            <div className="row justify-content-center">
             
-          </div>
-        </div>
+           
+              <img className=" col-5 img-fluid  text-center  " src={details.meals[0].strMealThumb} alt="Card image cap"/>
+
+            <div className='card col-7 card-body'>
+              <h6 className="card-title  colorPrincipal">{details.meals[0].strMeal}</h6>
+              <p className="card-text text text-wrap">{details.meals[0].strInstructions}</p>
+
+              <span className="card-text text">{}</span>
+              <span className="card-text text">{}</span>
+
+              <p className="card-text text-short">{details.meals[0].strIngredient1}</p>
+              <p className="card-text text-short">{details.meals[0].strIngredient2}</p>
+              <p className="card-text text-short">{details.meals[0].strIngredient3}</p>
+              <p className="card-text text-short">{details.meals[0].strIngredient4}</p> 
+
+              
+            </div>
+            </div>
+          
         
-      </div>
-      </div>
-    ) 
+        </div>
+    )
+
+
+
+   return details===null
+      ?  <LoadingComponent/>
+      :<RenderReceta/>
 }

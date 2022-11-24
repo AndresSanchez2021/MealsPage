@@ -58,6 +58,15 @@
   overflow: scroll;
   
 }
+.picture{
+  max-width: 300px!important;
+}
+.footer{
+  border-top: 1px solid var(--dark-color-text);
+  border-radius: 5px 5px 0 0;
+  background-color: var(--card-color-background);
+  padding: 15px;
+}
 .nav-no-link{
   
   
@@ -77,7 +86,6 @@
 .nav-no-link:active{
   border-bottom: 1px solid var(--principal-background)!important;
 }
-
 
 
 

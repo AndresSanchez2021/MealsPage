@@ -3,14 +3,14 @@ import { Link, useParams } from 'react-router-dom';
 import '../styles/itemCard.css'
 
 
-export const ItemCard = ({id,category="",thumb,description="" ,flag=false}) => {
-    description.split("");
+export const CardCategory = ({}) => {
+    /* description.split("");
     description = description.length >=100 ? description.slice(0,40):description;
 
     
-    flag ? console.log(' itemCardid:',id,category,thumb,description ) :<></>
-
-    const RenderItemCard = ()=>(
+    
+ */
+   /*  const RenderItemCard = ()=>(
         <li className="card cardItem" key={id} id={id}>
                 <div className="card-body">
                     <div className="row">
@@ -30,15 +30,11 @@ export const ItemCard = ({id,category="",thumb,description="" ,flag=false}) => {
                     </div>
                 </div>
             </li>
-    )
+    ) */
 
     
     
-  return (
-        <Link className='no-nav-link' to={`/category/${category}`} id={id} key={id} >
-            <RenderItemCard/>
-        </Link>   
-        
+  return (<>{console.log(' soy un item', )}</>
         
   )
 }

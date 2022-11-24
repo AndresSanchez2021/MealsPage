@@ -2,12 +2,13 @@ import { NavBarComponent } from './NavBarComponent';
 import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { LoadingComponent } from './LoadingComponent';
-import { PrincipalPage } from '../pages/PrincipalPage';
 import {Receta} from '../pages/Receta'
 import { Jumbotron } from './Jumbotron';
 import {BrowserRouter as Router,Routes, Route,  Link} from "react-router-dom";
 import { ListItemCategories } from './ListItemCategories';
 import { FooterComponent } from './FooterComponent';
+import { Categoty } from '../pages/Categoty';
+import { ListCardMeal } from './ListCardMeal';
 
 
 
@@ -56,13 +57,16 @@ export const MainComponents=()=> {
         <Jumbotron/>
 
         <div className="container">
-          <Routes>
-              <Route path="/" element={<PrincipalPage data ={mealss.meals}  listCategories={categories.categories}/>  } />
-              <Route path="/home" element={<PrincipalPage data ={mealss.meals}  listCategories={categories.categories}/>  } />
-              <Route path="/receta/:id" element={<Receta/>} />
-              <Route path="/" render={<PrincipalPage data ={mealss.meals}  listCategories={categories.categories}/>}/>
-              {/* <redirect to="/home"/> */}
-          </Routes>
+          <div className="row rowR">
+              <Routes>
+                  
+                  <Route path="/home" element={<ListCardMeal data ={mealss.meals}/>   } />
+                  <Route path="/receta/:id" element={<Receta/>} />
+                  <Route path="/category/:category" element={<Categoty/>} />
+              
+              </Routes>
+              <ListItemCategories  listCategories={categories.categories}/>
+          </div>
         </div>
         <FooterComponent/>
         
