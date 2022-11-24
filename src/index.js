@@ -11,7 +11,7 @@ import {BrowserRouter as Router,Switch, Route,  Link} from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/PageMeals">
       <App />
     </Router>
   </React.StrictMode>
