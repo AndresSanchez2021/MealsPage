@@ -1,4 +1,5 @@
-import { MainComponents } from './components/MainComponents';
+import { Provider } from 'react-redux';
+import MainComponents  from './components/MainComponents';
 
   
 
@@ -6,7 +7,7 @@ import { MainComponents } from './components/MainComponents';
 function App() {
   
   return (
-    <MainComponents/>
+      <MainComponents/>
   )
 }
 

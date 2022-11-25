@@ -1,5 +1,4 @@
 import { NavBarComponent } from './NavBarComponent';
-import axios from 'axios'
 import { useEffect, useState } from 'react';
 import { LoadingComponent } from './LoadingComponent';
 import {Receta} from '../pages/Receta'
@@ -9,58 +8,44 @@ import { ListItemCategories } from './ListItemCategories';
 import { FooterComponent } from './FooterComponent';
 import { Categoty } from '../pages/Categoty';
 import { ListCardMeal } from './ListCardMeal';
+import { useLoadData } from '../hooks/useLoadData';
+import { addToMeals } from '../redux/actionsCreator';
+import { connect } from 'react-redux';
 
 
 
 
-export const MainComponents=()=> {
+const MainComponents=({getAllData})=> {
 
   const urlBase ='https://www.themealdb.com/api/json/v1/1'
   const urlCategories='/categories.php'
-  const urlFilterCategories='/filter.php?c='
-  const urlFullDetails='/lookup.php?i='
-  const urlAllMeals = '/list.php?i=list'
   const urlDetailsMeal= '/search.php?f=b'
 
+  const [categories, setCategories] = useLoadData(urlBase+urlCategories)
+  const [meals, setMeals] = useLoadData(urlBase+urlDetailsMeal)
 
-  const photo ='https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlcnxlbnwwfHwwfHw%3D&w=1000&q=80'
-
-  const [categories, setCategories] = useState("")
-  const [mealss, setMealss] = useState("")
   
-
-
-  const loadData=()=>{
-    axios.get(urlBase+urlCategories).then((response)=>{
-      setCategories(response.data)
-    })
-    
-    axios.get(urlBase+urlDetailsMeal).then((response)=>{
-      setMealss(response.data)
-    })
-      
-  }
-
-
+  
   useEffect(() => {
-    loadData()
-
+    setCategories()
+    setMeals()
+    getAllData()
   }, [])
   
+
+
   
-  return (
-    categories == "" 
-    ? <LoadingComponent/>
-    :  (
-      <>
-        <NavBarComponent photo={photo}/>
+  const RenderMain=()=>(
+    <>
+        <NavBarComponent/>
         <Jumbotron/>
 
         <div className="container">
           <div className="row rowR">
               <Routes>
                   
-                  <Route path="/home" element={<ListCardMeal data ={mealss.meals}/>   } />
+                  <Route index element={<ListCardMeal data ={meals.meals}/>   } />
+                  <Route path="/home" element={<ListCardMeal data ={meals.meals}/>   } />
                   <Route path="/receta/:id" element={<Receta/>} />
                   <Route path="/category/:category" element={<Categoty/>} />
               
@@ -73,10 +58,22 @@ export const MainComponents=()=> {
 
 
       </>
-    )   
+  )
+  
+  return (
+    categories == "" 
+    ? <LoadingComponent/>
+    : <RenderMain/> 
   );
 }
 
+const mapStateToProps=()=>{""}
+const mapDispatchToProps=dispatch=>({
+  getAllData(){
+    dispatch(addToMeals())
+  }
+})
 
+export default   connect(mapStateToProps, mapDispatchToProps)(MainComponents)
 
     

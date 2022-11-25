@@ -1,10 +1,11 @@
 {
   "name": "Meals",
   "version": "0.1.0",
-  "homepage":"https://andressanchez2021.github.io/Meals/",
+  "homepage": "",
   "private": true,
   "dependencies": {
     "@popperjs/core": "^2.11.6",
+    "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -27,7 +28,6 @@
     "eject": "react-scripts eject",
     "predeploy": "vite build",
     "deploy": "gh-pages -d build"
-    
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": ""
+  }
 }

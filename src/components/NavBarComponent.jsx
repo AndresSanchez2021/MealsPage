@@ -13,8 +13,8 @@ export const NavBarComponent = ({photo=""}) => {
         <nav className="navbar navbar-expand-lg bg-light sticky-top">
             <div className="container-fluid">
                 <Link className="navbar-brand no-nav-link" to="/home">Kuks Fresh</Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse flex-navbar" id="navbarNav">
                     <ul className="navbar-nav ">
@@ -25,12 +25,12 @@ export const NavBarComponent = ({photo=""}) => {
                         </Link>  
                         <Link className='no-nav-link' to="/" >
                             <li className="nav-item .effectTransition">
-                                <span className="nav-link" href="#">Nosotros</span>
+                                <span className="nav-link disabled" href="#">Nosotros</span>
                             </li>
                         </Link>  
                         <Link className='no-nav-link'  to="/" >
                             <li className="nav-item .effectTransition">
-                            <span className="nav-link" href="#">Videos</span>
+                            <span className="nav-link disabled" href="#">Videos</span>
                             </li>                    
                         </Link>
                     </ul>

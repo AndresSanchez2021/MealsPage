@@ -7,17 +7,17 @@ import { ItemCard } from './ItemCard';
 export const ListCardMeal = ({data=[], category=false}) => {
 
     const ListMeal=()=>data.map(item => 
-        <CardMeal 
-        idMeal ={item.idMeal}
-        strMeal = {item.strMeal}
-        strCategory =  {item.strCategory}
-        strArea =  {item.strArea}
-        strIngredient1 = {item.strIngredient1}
-        strIngredient2 = {item.strIngredient2}
-        strIngredient3 = {item.strIngredient3}
-        strIngredient4 = {item.strIngredient4}
-        strInstructions = {item.strInstructions}
-        strMealThumb = {item.strMealThumb}
+        <CardMeal key={item.idMeal}
+            idMeal ={item.idMeal}
+            strMeal = {item.strMeal}
+            strCategory =  {item.strCategory}
+            strArea =  {item.strArea}
+            strIngredient1 = {item.strIngredient1}
+            strIngredient2 = {item.strIngredient2}
+            strIngredient3 = {item.strIngredient3}
+            strIngredient4 = {item.strIngredient4}
+            strInstructions = {item.strInstructions}
+            strMealThumb = {item.strMealThumb}
     />)
 
     const ListMealsCategory=()=>data.meals.map(item => 
